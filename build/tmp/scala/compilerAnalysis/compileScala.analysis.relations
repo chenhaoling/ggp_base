@@ -1,0 +1,36 @@
+products:
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer$$anonfun$1.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer$$anonfun$2.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer$$anonfun$3.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer$$anonfun$findBestMoveFromMoves$1$1.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer$.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/scala/main/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.class
+binary dependencies:
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> /home/ggp/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/player/gamer/statemachine/StateMachineGamer.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/game/Game.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/MachineState.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/Move.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/Role.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/StateMachine.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/implementation/prover/ProverStateMachine.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> /usr/local/java/jdk1.8/jre/lib/rt.jar
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> /home/ggp/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/player/gamer/statemachine/StateMachineGamer.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/game/Game.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/MachineState.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/Move.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/Role.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/StateMachine.class
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> build/classes/java/main/org/ggp/base/util/statemachine/implementation/prover/ProverStateMachine.class
+source dependencies:
+external dependencies:
+class names:
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer$
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer$$anonfun$1
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer$$anonfun$2
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer$$anonfun$3
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleMonteCarloGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleMonteCarloGamer$$anonfun$findBestMoveFromMoves$1$1
+   src/main/scala/org/ggp/base/scala/player/gamer/statemachine/SampleRandomGamer.scala -> org.ggp.base.scala.player.gamer.statemachine.SampleRandomGamer

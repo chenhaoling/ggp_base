@@ -1,0 +1,5 @@
+{
+  "gameName": "goboku11*11-6",  
+  "rulesheet": "gomoku11*11.kif",
+  "user_interface": "gomoku11*11.js"
+}

@@ -1,0 +1,163 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Tictactoe (played on a 7x7 grid)
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ROLE Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(role xPlayer)
+(role oPlayer)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BASE & INPUT Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= (base (mark ?x ?y x)) (index ?x) (index ?y))
+(<= (base (mark ?x ?y o)) (index ?x) (index ?y))
+(<= (base (control ?p)) (role ?p))
+
+(<= (input xPlayer (play ?x ?y x)) (index ?x) (index ?y))
+(<= (input oPlayer (play ?x ?y o)) (index ?x) (index ?y))
+(<= (input ?p noop) (role ?p))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; INIT Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(init (control xPlayer))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LEGAL Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= (legal xPlayer noop)
+    (true (control oPlayer)))
+(<= (legal xPlayer (play ?i ?j x))
+    (true (control xPlayer))
+	(emptyCell ?i ?j))
+
+(<= (legal oPlayer noop)
+    (true (control xPlayer)))
+(<= (legal oPlayer (play ?i ?j o))
+    (true (control oPlayer))
+	(emptyCell ?i ?j))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; NEXT Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= (next (mark ?i ?j ?mark))
+    (role ?player)
+    (does ?player (play ?i ?j ?mark)))
+(<= (next (mark ?i ?j ?mark))
+    (true (mark ?i ?j ?mark)))
+
+(<= (next (control xPlayer))
+    (true (control oPlayer)))
+(<= (next (control oPlayer))
+    (true (control xPlayer)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TERMINAL Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= terminal
+    (line x))
+(<= terminal
+    (line o))
+(<= terminal
+    (not open))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GOAL Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= (goal xPlayer 100)
+    (line x))
+(<= (goal xPlayer 50)
+    (not (line x))
+    (not (line o))
+    (not open))
+(<= (goal xPlayer 0)
+    (line o))
+(<= (goal xPlayer 0)
+    (not (line x))
+    (not (line o))
+    open)
+
+(<= (goal oPlayer 100)
+    (line o))
+(<= (goal oPlayer 50)
+    (not (line x))
+    (not (line o))
+    (not open))
+(<= (goal oPlayer 0)
+    (line x))
+(<= (goal oPlayer 0)
+    (not (line x))
+    (not (line o))
+    open)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; View Definitions
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<= (row ?i ?mark)
+    (true (mark ?i 1 ?mark))
+    (true (mark ?i 2 ?mark))
+    (true (mark ?i 3 ?mark))
+    (true (mark ?i 4 ?mark))
+    (true (mark ?i 5 ?mark))
+    (true (mark ?i 6 ?mark))
+    (true (mark ?i 7 ?mark)))
+(<= (col ?j ?mark)
+    (true (mark 1 ?j ?mark))
+    (true (mark 2 ?j ?mark))
+    (true (mark 3 ?j ?mark))
+    (true (mark 4 ?j ?mark))
+    (true (mark 5 ?j ?mark))
+    (true (mark 6 ?j ?mark))
+    (true (mark 7 ?j ?mark)))
+(<= (diag ?mark)
+    (true (mark 1 1 ?mark))
+    (true (mark 2 2 ?mark))
+    (true (mark 3 3 ?mark))
+    (true (mark 4 4 ?mark))
+    (true (mark 5 5 ?mark))
+    (true (mark 6 6 ?mark))
+    (true (mark 7 7 ?mark)))
+(<= (diag ?mark)
+    (true (mark 1 7 ?mark))
+    (true (mark 2 6 ?mark))
+    (true (mark 3 5 ?mark))
+    (true (mark 4 4 ?mark))
+    (true (mark 5 3 ?mark))
+    (true (mark 6 2 ?mark))
+    (true (mark 7 1 ?mark)))
+
+(<= (line ?mark)
+    (index ?i)
+    (row ?i ?mark))
+(<= (line ?mark)
+    (index ?j)
+    (col ?j ?mark))
+(<= (line ?mark)    
+    (diag ?mark))
+    
+(<= (emptyCell ?i ?j)
+    (index ?i)
+    (index ?j)
+    (not (true (mark ?i ?j x)))
+    (not (true (mark ?i ?j o))))
+(<= open    
+    (emptyCell ?i ?j))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Static Relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(index 1) (index 2) (index 3) (index 4) (index 5) (index 6) (index 7)
+
